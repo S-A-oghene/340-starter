@@ -10,6 +10,7 @@ body {
   font-family: "Roboto", sans-serif;
   color: #333;
   line-height: 1.6;
+  background: url("/images/site/checkerboard.jpg") repeat; /* Checkerboard for desktop */
 }
 
 /* Container */
@@ -17,6 +18,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  background: white; /* Content readability */
 }
 
 /* Header */
@@ -85,22 +87,32 @@ main {
   padding: 2rem 0;
 }
 
-.hero {
+.hero,
+.vehicle-info,
+.upgrades,
+.reviews {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
-.hero h2 {
+.hero h2,
+.vehicle-info h2,
+.upgrades h2,
+.reviews h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #004aad;
 }
 
-.hero p {
+.hero p,
+.vehicle-info p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+  color: #333;
 }
 
-.hero-image {
+.hero-image,
+.vehicle-image {
   max-width: 100%;
   height: auto;
   margin-bottom: 1.5rem;
@@ -120,6 +132,37 @@ main {
   background-color: #e55a00;
 }
 
+/* Upgrades Grid */
+.upgrade-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.upgrade-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.upgrade-item p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Reviews Grid */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.review-item p {
+  font-style: italic;
+  font-size: 1rem;
+  color: #333;
+}
+
 /* Footer */
 footer {
   background-color: #333;
@@ -129,16 +172,17 @@ footer {
   margin-top: 2rem;
 }
 
-footer a {
-  color: #ff6200;
-}
-
-footer a:hover {
-  color: #e55a00;
+footer .copyright {
+  font-size: 1rem;
+  color: #333;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  body {
+    background: none; /* Remove checkerboard on mobile */
+  }
+
   #top-header .container {
     flex-direction: column;
     text-align: center;
@@ -157,15 +201,28 @@ footer a:hover {
     margin: 10px 0;
   }
 
-  .hero h2 {
+  .hero h2,
+  .vehicle-info h2,
+  .upgrades h2,
+  .reviews h2 {
     font-size: 2rem;
   }
 
-  .hero p {
+  .hero p,
+  .vehicle-info p {
     font-size: 1rem;
   }
 
-  .hero-image {
+  .hero-image,
+  .vehicle-image {
     max-width: 80%;
+  }
+
+  .upgrade-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-grid {
+    grid-template-columns: 1fr;
   }
 }
