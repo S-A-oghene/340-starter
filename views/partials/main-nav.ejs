@@ -1,0 +1,45 @@
+<nav class="main-nav">
+    <!-- Hamburger toggle menu button -->
+    <div class="nav__hamburger-menu" id="nav-hamburger-menu">
+      <i class="ri-menu-line"></i>
+    </div>
+  
+    <!-- The close icon/ button -->
+    <div class="nav__close-btn" id="nav-close-btn">
+      <i class="ri-close-large-line"></i>
+    </div>
+  
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__menu--menu">
+        <li class="nav__list">
+          <a class="nav__link" href="/">
+            <i class="ri-home-8-line"></i>
+            <span>Home</span>
+          </a>
+        </li>
+  
+        <li class="nav__list">
+          <a class="nav__link" href="#">
+            <i class="ri-information-line"></i>
+            <span>About</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  
+    <% if (locals.loggedin) {%>
+              <a href="/account" title="Click to see account" class="accounthov"> Welcome <%- locals.accountData.account_firstname %></a><span> | </span><a href="/account/logout" title="Click to log out" class=" nav__link account-btn">Logout</a>
+          <% } else{ %>
+               <a
+                class="nav__link account-btn"
+                title="Click to log in"
+                href="/account/login"
+              >
+                My Account
+                <i class="ri-account-box-line account-icon"></i>
+              </a>
+          <% } %>   
+  
+    
+    
+  </nav>

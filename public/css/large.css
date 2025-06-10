@@ -1,0 +1,165 @@
+@media only screen and (min-width: 56.25em) {
+  html {
+    font-size: 62.5%;
+  }
+
+  body {
+    background-image: url("../images/site/small_check.jpg");
+    display: grid;
+    font-size: 2rem;
+    place-items: center;
+    padding-block: 3rem;
+  }
+
+  .wrapper {
+    background-color: var(--secondary-color);
+    width: 85%;
+    border-radius: 0.5rem;
+    border: 0.5rem solid var(--tertiary-color);
+  }
+
+  .logo {
+    width: 50%;
+  }
+
+  /* ************* HEADER AND NAVIGATION ************ */
+  .account-btn {
+    align-items: normal;
+    gap: 5px;
+    order: 1;
+  }
+
+  .account-icon {
+    display: block;
+    font-size: 2.5rem;
+  }
+
+  .nav__menu {
+    position: static;
+    background-color: transparent;
+    color: var(--primary-color-variant-1);
+    padding: 0;
+    border-radius: 0;
+
+    display: block;
+    transition: none;
+    margin-inline-end: 1.5rem;
+  }
+
+  .nav__menu--menu {
+    text-decoration: none;
+  }
+
+  .nav__list {
+    padding: 0.3em 0.5em;
+    border-radius: 0.5rem;
+  }
+
+  .nav__list:hover {
+    background-color: var(--secondary-color-variant-2);
+    outline: solid var(--tertiary-color);
+  }
+
+  .nav__hamburger-menu,
+  .nav__close-btn {
+    display: none;
+  }
+
+  .nav__menu--menu,
+  .main-nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .accounthov {
+  order: 0;
+  }
+
+
+
+  /* Vehicles Navigation */
+  .vehicles-nav {
+    width: 60%;
+    margin: 1.5rem auto;
+    border-radius: 0.5rem;
+    padding: 0.5em;
+  }
+
+  .hero-content {
+    margin-inline: 2rem;
+    padding-inline: 0;
+  }
+
+  .hero-image {
+    width: 90%;
+  }
+
+  .hero-image-container div {
+    width: 40%;
+    padding-block: 1em;
+  }
+
+  /* upgrades */
+  .upgrade-image-box {
+    width: 50%;
+  }
+
+  .vehicle-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  /* .vehicle-detail {
+  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  } */
+
+  /* .vehicle-detail img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+
+  flex: 1 1 40%;
+} */
+
+  /* .vehicle-detail .details {
+  flex: 1 1 60%;
+  padding: 20px;
+  background-color: var(--secondary-color-variant-2);
+  border-radius: 0.5rem;
+} */
+
+  /* .vehicle-detail .details p {
+  margin: 10px 0;
+  border-bottom: solid 1px var(--primary-color-variant-1);
+} */
+
+  /* .vehicle-detail .details strong {
+  display: inline-block;
+  width: 120px;
+} */
+}
+
+/* ************* HEADER AND NAVIGATION ************ */
+@media only screen and (max-width: 600px) {
+  div {
+   
+    font-size: 14px; /* Reduce text size if needed */
+  }
+
+  h3 {
+    font-size: 18px; /* Adjust heading size */
+  }
+
+  ul {
+    margin: 0; /* Reduce margin to save space */
+  }
+
+  a {
+    display: inline-block; /* Adjust the button size if needed */
+    padding: 5px 10px; /* Adjust link/button padding */
+  }
+}

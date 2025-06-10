@@ -1,6 +1,11 @@
-<% const d = new Date(); let year = d.getFullYear(); %>
+<!-- views/partials/footer.ejs -->
+<% 
+  const d = new Date();
+  let year = d.getFullYear();
+%>
 <footer>
   <div class="container">
     <p class="copyright">© <%= year %>, CSE Motors</p>
+    <a href="/inv/cause-error">Trigger Error</a>
   </div>
 </footer>
