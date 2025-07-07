@@ -1,30 +1,12 @@
 // CSE Motors - Main JavaScript File
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle functionality
+    // Mobile menu toggle functionality (if needed in future)
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('nav ul');
     
     if (mobileMenuToggle && navMenu) {
         mobileMenuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('show');
-            this.classList.toggle('active');
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('nav') && !e.target.closest('.mobile-menu-toggle')) {
-                navMenu.classList.remove('show');
-                mobileMenuToggle.classList.remove('active');
-            }
-        });
-        
-        // Close menu when clicking on a nav link
-        const navLinks = document.querySelectorAll('nav ul li a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navMenu.classList.remove('show');
-                mobileMenuToggle.classList.remove('active');
-            });
         });
     }
     

@@ -6,39 +6,22 @@
 }
 
 /* Reset and Base Styles */
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-li {
+body, h1, h2, h3, p, ul, li {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "Open Sans", "Roboto", Arial, sans-serif;
+  font-family: 'Open Sans', 'Roboto', Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #618cb8;
   background-color: #ecf0f1;
-  min-height: 100vh;
-}
-
-/* Main Site Container - Centralized Layout */
-.site-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: white;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  min-height: 100vh;
-  position: relative;
 }
 
 /* Container */
 .container {
-  max-width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -48,7 +31,7 @@ body {
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: white;
   padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .header-content {
@@ -110,7 +93,7 @@ body {
 
 .hamburger::before,
 .hamburger::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 25px;
   height: 3px;
@@ -140,7 +123,7 @@ body {
   top: 0;
 }
 
-/* Navigation Styles - Updated to work with your exact structure */
+/* Navigation Styles */
 nav {
   background-color: #34495e;
   padding: 0.75rem 0;
@@ -195,7 +178,7 @@ main {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero p {
@@ -209,7 +192,7 @@ main {
   height: auto;
   margin: 1.5rem 0;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .btn {
@@ -222,13 +205,13 @@ main {
   font-weight: 600;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .btn:hover {
   background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 /* Content Wrapper for Desktop Layout */
@@ -244,7 +227,7 @@ main {
   background-color: #f8f9fa;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .vehicle-info h2 {
@@ -259,7 +242,7 @@ main {
   height: auto;
   border-radius: 8px;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -278,7 +261,7 @@ main {
   background-color: #f8f9fa;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .upgrades h2 {
@@ -299,13 +282,13 @@ main {
   background-color: white;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
 
 .upgrade-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .upgrade-item img {
@@ -348,7 +331,7 @@ main {
 }
 
 .review-item {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255,255,255,0.1);
   padding: 1.5rem;
   border-radius: 8px;
   border-left: 4px solid #3498db;
@@ -376,37 +359,30 @@ footer {
 
 /* Responsive Design - Tablet */
 @media screen and (min-width: 768px) {
-  /* Add checkerboard background and container padding for larger screens */
+  /* Add checkerboard background for larger screens */
   body {
-    background-image: url("/images/site/checkerboard.jpg");
+    background-image: url('/images/site/checkerboard.jpg');
     background-repeat: repeat;
     background-attachment: fixed;
     background-size: 180px 180px;
-    padding: 2rem;
   }
-
-  .site-container {
-    max-width: 1000px;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
+  
   .upgrade-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-
+  
   .review-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
+  
   .content-wrapper {
     grid-template-columns: 1fr 1fr;
   }
-
+  
   .vehicle-info {
     grid-column: 1;
   }
-
+  
   .upgrades {
     grid-column: 2;
   }
@@ -414,73 +390,48 @@ footer {
 
 /* Responsive Design - Desktop */
 @media screen and (min-width: 1024px) {
-  body {
-    padding: 3rem;
-  }
-
-  .site-container {
-    max-width: 1200px;
-  }
-
   .hero h2 {
     font-size: 3rem;
   }
-
+  
   .hero p {
     font-size: 1.3rem;
   }
-
+  
   nav ul {
     justify-content: flex-start;
   }
-
+  
   .container {
     padding: 0 2rem;
   }
 }
 
-/* Large Desktop */
-@media screen and (min-width: 1440px) {
-  body {
-    padding: 4rem;
-  }
-
-  .site-container {
-    max-width: 1300px;
-  }
-}
-
 /* Mobile Responsive */
 @media screen and (max-width: 767px) {
-  /* Remove checkerboard background and padding on mobile for performance */
+  /* Remove checkerboard background on mobile for performance */
   body {
     background-image: none;
     background-color: #ecf0f1;
-    padding: 0;
   }
-
-  .site-container {
-    box-shadow: none;
-    border-radius: 0;
-  }
-
+  
   /* Make main content solid white on mobile */
   main {
     background-color: white;
     backdrop-filter: none;
   }
-
+  
   .header-content {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
-
+  
   /* Show mobile menu toggle */
   .mobile-menu-toggle {
     display: block;
   }
-
+  
   /* Hide navigation by default on mobile */
   nav ul {
     display: none;
@@ -493,85 +444,86 @@ footer {
     right: 0;
     background-color: #34495e;
     padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     z-index: 1000;
   }
-
+  
   /* Show navigation when active */
   nav ul.show {
     display: flex;
   }
-
+  
   nav {
     position: relative;
   }
-
+  
   nav ul li {
     margin: 0.25rem 0;
     width: 100%;
     text-align: center;
   }
-
+  
   nav ul li a {
     display: block;
     padding: 0.75rem 1rem;
     width: 100%;
   }
-
+  
   .hero {
     margin-top: 0.5rem;
     padding: 1.5rem 1rem;
   }
-
+  
   .hero h2 {
     font-size: 2rem;
   }
-
+  
   .hero p {
     font-size: 1rem;
   }
-
+  
   .vehicle-info,
   .upgrades {
     padding: 1.5rem 1rem;
   }
-
+  
   .vehicle-info h2,
   .upgrades h2,
   .reviews h2 {
     font-size: 1.5rem;
   }
-
+  
   .upgrade-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-
+  
   .upgrade-item {
     padding: 1rem;
   }
-
+  
   .upgrade-item img {
     width: 100px;
     height: 100px;
   }
-
+  
   .review-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+  
   .reviews {
     padding: 1.5rem 1rem;
   }
-
+  
   .review-item {
     padding: 1rem;
   }
-
+  
   .review-item p {
     font-size: 1rem;
   }
-
+  
   .btn {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
@@ -600,7 +552,7 @@ button:focus {
     background: #000;
     color: #fff;
   }
-
+  
   .btn {
     background: #000;
     border: 2px solid #fff;
@@ -614,18 +566,12 @@ button:focus {
   footer {
     display: none;
   }
-
+  
   body {
     background: white;
     color: black;
-    padding: 0;
   }
-
-  .site-container {
-    box-shadow: none;
-    border-radius: 0;
-  }
-
+  
   .vehicle-info,
   .upgrades,
   .reviews {
