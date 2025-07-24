@@ -1,75 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-  <%- include('partials/head') %>
-  <body>
-    <main>
-      <div class="container">
-        <section class="hero">
-          <h2>Welcome to CSE Motors</h2>
-          <p>Find your dream car today!</p>
-          <img
-            src="/images/site/own_today.png"
-            alt="Own Today Promotion"
-            class="hero-image"
-          />
-          <a href="/inventory" class="btn">View Inventory</a>
-        </section>
+<section class="hero">
+  <h1>Welcome to CSE Motors</h1>
+  <div class="hero-content">
+    <h2>DMC DeLorean</h2>
+    <ul>
+      <li>3 Cup holders</li>
+      <li>Superman doors</li>
+      <li>Fuzzy dice!</li>
+    </ul>
+    <a href="#" title="Own the DMC DeLorean today!">
+      <img
+        src="/images/site/own_today.png"
+        alt="Own Today Button"
+        class="own-today-btn"
+      >
+    </a>
+  </div>
+  <img
+    src="/images/vehicles/delorean.jpg"
+    alt="A silver DeLorean car with its gull-wing doors open"
+    class="hero-img"
+  >
+</section>
 
-        <div class="content-wrapper">
-          <section class="vehicle-info">
-            <h2>Featured Vehicle: DMC DeLorean</h2>
-            <img
-              src="/images/vehicles/delorean.jpg"
-              alt="DMC DeLorean"
-              class="vehicle-image"
-            />
-            <p>
-              Experience the iconic DMC DeLorean with its signature gull-wing
-              doors and stainless steel body. Perfect for car enthusiasts!
-            </p>
-          </section>
+<div class="content-wrapper">
+  <section class="upgrades">
+    <h2>DMC Upgrades</h2>
+    <div class="upgrade-grid">
+      <div class="upgrade-item"><img src="/images/upgrades/flux-cap.png" alt="Flux capacitor icon"><a href="#">Flux Capacitor</a></div>
+      <div class="upgrade-item"><img src="/images/upgrades/flame.jpg" alt="Flame decal icon"><a href="#">Flame Decals</a></div>
+      <div class="upgrade-item"><img src="/images/upgrades/bumper_sticker.jpg" alt="Bumper sticker icon"><a href="#">Bumper Stickers</a></div>
+      <div class="upgrade-item"><img src="/images/upgrades/hub-cap.jpg" alt="Hub cap icon"><a href="#">Hub Caps</a></div>
+    </div>
+  </section>
 
-          <section class="upgrades">
-            <h2>Upgrade Your Ride</h2>
-            <div class="upgrade-grid">
-              <div class="upgrade-item">
-                <img src="/images/upgrades/flame.jpg" alt="Flame Decals" />
-                <p>Flame Decals</p>
-              </div>
-              <div class="upgrade-item">
-                <img
-                  src="/images/upgrades/bumper_sticker.jpg"
-                  alt="Bumper Stickers"
-                />
-                <p>Bumper Stickers</p>
-              </div>
-              <div class="upgrade-item">
-                <img src="/images/upgrades/hub-cap.jpg" alt="Hub Caps" />
-                <p>Hub Caps</p>
-              </div>
-              <div class="upgrade-item">
-                <img src="/images/upgrades/flux-cap.png" alt="Flux Capacitor" />
-                <p>Flux Capacitor</p>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        <section class="reviews">
-          <h2>Customer Reviews</h2>
-          <div class="review-grid">
-            <div class="review-item">
-              <p>
-                "Amazing experience at CSE Motors! Found my dream car." - John
-                D.
-              </p>
-            </div>
-            <div class="review-item">
-              <p>"Great service and unique vehicles!" - Sarah M.</p>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
-  </body>
-</html>
+  <section class="reviews">
+    <h2>DMC DeLorean Reviews</h2>
+    <ul>
+      <li>"So fast its like traveling in time." (4/5)</li>
+      <li>"Coolest ride on the road." (4/5)</li>
+      <li>"I'm feeling McFly!" (5/5)</li>
+      <li>"The most futuristic ride of our day." (4.5/5)</li>
+      <li>"80's livin and I love it!" (5/5)</li>
+    </ul>
+  </section>
+</div>
