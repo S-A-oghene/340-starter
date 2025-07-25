@@ -37,10 +37,10 @@ CREATE TABLE IF NOT EXISTS public.account (
 --Data for table classification`
 INSERT INTO public.classification (classification_name)
 VALUES ('Custom'),
-    ('Sport'),
     ('SUV'),
     ('Truck'),
-    ('Sedan');
+    ('Sedan'); 
+
 -- Data for table `inventory`
 INSERT INTO public.inventory (
         inv_make,
@@ -64,7 +64,7 @@ VALUES (
         25000,
         101222,
         'Silver',
-        2
+        1
     ),
     (
         'Batmobile',
@@ -112,7 +112,7 @@ VALUES (
         28045,
         41205,
         'Yellow',
-        3
+        2
     ),
     (
         'Lamborghini',
@@ -124,7 +124,7 @@ VALUES (
         417650,
         71003,
         'Blue',
-        2
+        1
     ),
     (
         'Aerocar International',
@@ -160,7 +160,7 @@ VALUES (
         75195,
         41958,
         'Black',
-        4
+        3
     ),
     (
         'GM',
@@ -172,7 +172,7 @@ VALUES (
         58800,
         56564,
         'Yellow',
-        4
+        3
     ),
     (
         'Mechanic',
@@ -184,7 +184,7 @@ VALUES (
         100,
         200125,
         'Rust',
-        5
+        4
     ),
     (
         'Ford',
@@ -196,7 +196,7 @@ VALUES (
         30000,
         26357,
         'Black',
-        5
+        4
     ),
     (
         'Mystery',
@@ -220,7 +220,7 @@ VALUES (
         50000,
         38522,
         'Red',
-        4
+        3
     ),
     (
         'Ford',
@@ -232,5 +232,15 @@ VALUES (
         10000,
         108247,
         'White',
-        5
+        4
     );
+
+-- Query 4: Modify the "GM Hummer" record
+UPDATE public.inventory
+SET inv_description = REPLACE(inv_description, 'small interiors', 'a huge interior')
+WHERE inv_make = 'GM' AND inv_model = 'Hummer';
+
+-- Query 6: Update image and thumbnail paths
+UPDATE public.inventory
+SET inv_image = REPLACE(inv_image, '/images/', '/images/vehicles/'),
+    inv_thumbnail = REPLACE(inv_thumbnail, '/images/', '/images/vehicles/');

@@ -30,7 +30,7 @@ WHERE inv_make = 'GM' AND inv_model = 'Hummer';
 SELECT i.inv_make, i.inv_model, c.classification_name
 FROM public.inventory AS i
 INNER JOIN public.classification AS c ON i.classification_id = c.classification_id
-WHERE c.classification_name = 'Sport';
+WHERE c.classification_name = 'Custom';
 
 -- Query 6: Update image and thumbnail paths
 UPDATE public.inventory

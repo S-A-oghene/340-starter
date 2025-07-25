@@ -4,8 +4,8 @@
   --secondary-color: #ffffff;
   --accent-color: #ffc107; /* A vibrant yellow */
   --text-color: #333333;
-  --heading-font: 'Roboto', sans-serif;
-  --body-font: 'Open Sans', sans-serif;
+  --heading-font: "Roboto", sans-serif;
+  --body-font: "Open Sans", sans-serif;
   --border-radius: 5px;
 }
 
@@ -21,10 +21,15 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--heading-font);
   color: var(--primary-color);
 }
@@ -48,7 +53,8 @@ a:hover {
   color: var(--secondary-color);
 }
 
-.siteName a, #tools a {
+.siteName a,
+#tools a {
   color: var(--secondary-color);
   font-size: 1.5rem;
 }
@@ -137,6 +143,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    padding: 1rem;
   }
 
   .reviews {
