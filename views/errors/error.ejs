@@ -1,0 +1,11 @@
+<%# Content Heading %>
+<% if (title) { %>
+  <h1><%- title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+
+<%# Message Block - Will be used in a future unit %>
+<%# messages() %>
+
+<p><%- message %></p>

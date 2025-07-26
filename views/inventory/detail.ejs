@@ -1,0 +1,3 @@
+<%# The detail.ejs view %> <%# Content Heading %> <% if (title) { %>
+<h1><%- title %></h1>
+<% } else { res.redirect('/') } %> <%# Inventory Item Display %> <%- grid %>
