@@ -1,0 +1,14 @@
+<%# Content for "management.ejs" %>
+
+<% if (title) { %>
+    <h1><%= title %></h1>
+<% } else {
+    res.redirect('/')
+} %>
+
+<%- messages() %>
+
+<div class="management-options">
+    <a href="/inv/add-classification" title="Add a new classification">Add New Classification</a>
+    <a href="/inv/add-inventory" title="Add a new vehicle to inventory">Add New Vehicle</a>
+</div>
