@@ -44,7 +44,4 @@ router.post(
     utilities.handleErrors(invController.addInventory)
   )
 
-// Route to trigger a 500 error
-router.get("/error", utilities.handleErrors(invController.triggerError));
-
 module.exports = router;
