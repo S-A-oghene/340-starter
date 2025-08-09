@@ -9,6 +9,9 @@ const express = require("express");
 const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config();
 const app = express();
+const session = require("express-session")
+const pool = require("./database/")
+const connectPgSimple = require("connect-pg-simple")
 const static = require("./routes/static");
 const baseController = require("./controllers/baseController")
 const utilities = require("./utilities/")
@@ -29,11 +32,21 @@ app.set("layout", "./layouts/layout"); // Add this line
 app.use(express.json())
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-app.use(require('express-session')({
+const store = new (connectPgSimple(session))({
+  pool : pool,
+  createTableIfMissing: true,
+})
+
+app.use(session({
+  store: store,
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 30 * 24 * 60 * 60 * 1000 // 30 days
+  }
 }));
+
 app.use(require('connect-flash')());
 
 /* ***********************
