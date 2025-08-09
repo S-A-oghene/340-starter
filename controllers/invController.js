@@ -158,4 +158,35 @@ invCont.addInventory = async function (req, res) {
   }
 }
 
+/* ***************************
+ *  Build delete classification view (Temporary)
+ * ************************** */
+invCont.buildDeleteClassificationView = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("./inventory/delete-classification", {
+    title: "Delete Classification",
+    nav,
+    errors: null,
+    messages: () => utilities.buildMessagesHTML(req),
+  })
+}
+
+/* ***************************
+ *  Process classification deletion (Temporary)
+ * ************************** */
+invCont.deleteClassification = async function (req, res) {
+  const { classification_name } = req.body
+  const cleanupResult = await invModel.deleteClassificationByName(classification_name)
+
+  if (cleanupResult) {
+    req.flash(
+      "notice",
+      `The "${classification_name}" classification has been removed.`
+    )
+  } else {
+    req.flash("notice", "Sorry, the cleanup process failed.")
+  }
+  res.redirect("/inv/delete-classification")
+}
+
 module.exports = invCont;

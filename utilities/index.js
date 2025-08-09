@@ -5,7 +5,7 @@ const { body, validationResult } = require("express-validator")
 /* ************************
  * Constructs the nav HTML unordered list
  ************************** */
-Util.getNav = async function (req, res, next) {
+Util.getNav = async function () {
   let data = await invModel.getClassifications();
   let list = '<ul class="navigation">';
   list += '<li><a href="/" title="Home page">Home</a></li>';

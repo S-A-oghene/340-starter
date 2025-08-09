@@ -28,6 +28,14 @@ router.post(
 // Route to build add-inventory view
 router.get("/add-inventory", utilities.handleErrors(invController.buildAddInventoryView));
 
+// --- Temporary Routes for Deleting Classifications ---
+// Route to build the delete view
+router.get("/delete-classification", utilities.handleErrors(invController.buildDeleteClassificationView));
+
+// Route to process the deletion
+router.post("/delete-classification", utilities.handleErrors(invController.deleteClassification));
+
+
 // Route to post new inventory
 router.post(
     "/add-inventory",

@@ -99,4 +99,17 @@ async function addInventory(inv_make, inv_model, inv_year, inv_description, inv_
   }
 }
 
-module.exports = {getClassifications, getInventoryByClassificationId, getInventoryByInvId, getClassificationById, checkExistingClassification, addClassification, addInventory};
+/* ***************************
+ *  Delete classification by name
+ * ************************** */
+async function deleteClassificationByName(classification_name){
+  try {
+    const sql = "DELETE FROM classification WHERE classification_name = $1"
+    return await pool.query(sql, [classification_name])
+  } catch (error) {
+    console.error("deleteemptyclassifications error: " + error)
+    return null
+  }
+}
+
+module.exports = {getClassifications, getInventoryByClassificationId, getInventoryByInvId, getClassificationById, checkExistingClassification, addClassification, addInventory, deleteClassificationByName};

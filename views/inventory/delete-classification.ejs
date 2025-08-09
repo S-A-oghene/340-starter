@@ -1,0 +1,25 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+<% } else {
+    res.redirect('/')
+} %>
+
+<%- messages() %>
+
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+<% } %>
+
+<p>This is a temporary tool for development and testing. Deleting a classification is permanent.</p>
+
+<form id="deleteClassificationForm" action="/inv/delete-classification" method="post">
+    <fieldset>
+        <label for="classification_name">Classification Name to Delete:</label>
+        <input type="text" id="classification_name" name="classification_name" required>
+        <button type="submit">Delete Classification</button>
+    </fieldset>
+</form>
