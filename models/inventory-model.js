@@ -100,15 +100,26 @@ async function addInventory(inv_make, inv_model, inv_year, inv_description, inv_
 }
 
 /* ***************************
- *  Delete classification by name
+ *  Delete classification and all associated inventory by name
  * ************************** */
 async function deleteClassificationByName(classification_name){
+  const client = await pool.connect();
   try {
-    const sql = "DELETE FROM classification WHERE classification_name = $1"
-    return await pool.query(sql, [classification_name])
+    await client.query('BEGIN');
+    // First, delete inventory items associated with the classification
+    await client.query(`DELETE FROM inventory WHERE classification_id = (
+      SELECT classification_id FROM classification WHERE classification_name = $1
+    )`, [classification_name]);
+    // Then, delete the classification itself
+    const result = await client.query("DELETE FROM classification WHERE classification_name = $1", [classification_name]);
+    await client.query('COMMIT');
+    return result;
   } catch (error) {
-    console.error("deleteemptyclassifications error: " + error)
+    await client.query('ROLLBACK');
+    console.error("deleteclassificationbyname error: " + error);
     return null
+  } finally {
+    client.release();
   }
 }
 
