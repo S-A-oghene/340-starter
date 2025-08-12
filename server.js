@@ -14,23 +14,23 @@ const pool = require("./database/")
 const connectPgSimple = require("connect-pg-simple")
 const static = require("./routes/static");
 const baseController = require("./controllers/baseController")
-const utilities = require("./utilities/")
+const utilities = require("./utilities/");
 const inventoryRoute = require("./routes/inventoryRoute")
+const accountRoute = require("./routes/accountRoute")
+const cookieParser = require("cookie-parser")
 
 /* ***********************
  * View Engine and Templates
  *************************/
 // In your server.js or app.js
-app.set("view engine", "ejs");
-app.use(expressLayouts);
-app.set("layout", "./layouts/layout"); // Add this line
+app.set("view engine", "ejs")
+app.use(expressLayouts)
+app.set("layout", "./layouts/layout")
 
 /* ***********************
  * Middleware
  * ************************/
-// Add these session and flash middleware configurations
-app.use(express.json())
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 
 const store = new (connectPgSimple(session))({
   pool : pool,
@@ -47,7 +47,11 @@ app.use(session({
   }
 }));
 
-app.use(require('connect-flash')());
+app.use(require('connect-flash')())
+app.use(express.json())
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(cookieParser())
+app.use(utilities.checkJWTToken)
 
 /* ***********************
 * Express Error Handler
@@ -74,6 +78,9 @@ app.get("/", baseController.buildHome)
 
 // Inventory routes
 app.use("/inv", inventoryRoute)
+
+// Account routes
+app.use("/account", accountRoute)
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {

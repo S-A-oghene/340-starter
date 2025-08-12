@@ -1,15 +1,20 @@
-<%# Content for "management.ejs" %>
-
-<% if (title) { %>
-    <h1><%= title %></h1>
-<% } else {
-    res.redirect('/')
-} %>
+<%# The management view for inventory %>
+<h1><%= title %></h1>
 
 <%- messages() %>
 
-<div class="management-options">
-    <a href="/inv/add-classification" title="Add a new classification">Add New Classification</a>
-    <a href="/inv/add-inventory" title="Add a new vehicle to inventory">Add New Vehicle</a>
-    <a href="/inv/delete-classification" title="Delete a classification">Delete Classification (Temp)</a>
+<div class="management-links">
+    <a href="/inv/add-classification">Add New Classification</a>
+    <a href="/inv/add-inventory">Add New Vehicle</a>
 </div>
+
+<h2>Manage Inventory</h2>
+<p>Choose a classification from the list to see the items.</p>
+
+<%- classificationSelect %>
+
+<table id="inventoryDisplay"></table>
+
+<noscript>JavaScript must be enabled to use this page.</noscript>
+
+<script src="../../js/inventory.js"></script>
