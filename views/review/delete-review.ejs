@@ -1,0 +1,12 @@
+<%# The delete-review.ejs view %>
+
+<% if (title) { %>
+    <h1><%- title %></h1>
+<% } else { res.redirect('/') } %>
+
+<%- messages() %>
+
+<%- locals.errors ? utilities.buildErrorList(errors) : "" %>
+
+<%- view %>
+

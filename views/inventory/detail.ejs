@@ -1,3 +1,16 @@
 <%# The detail.ejs view %> <%# Content Heading %> <% if (title) { %>
 <h1><%- title %></h1>
 <% } else { res.redirect('/') } %> <%# Inventory Item Display %> <%- grid %>
+
+<hr />
+
+<div id="reviews-section">
+  <h2>Customer Reviews</h2>
+  <%- reviews %>
+  <%- locals.errors ? utilities.buildErrorList(errors) : "" %>
+  <% if (locals.accountData) { %>
+    <%- utilities.buildAddReviewForm(inv_id, locals.accountData, locals.review_text, locals.review_rating) %>
+  <% } else { %>
+  <p>Please <a href="/account/login">log in</a> to write a review.</p>
+  <% } %>
+</div>

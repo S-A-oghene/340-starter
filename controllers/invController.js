@@ -1,5 +1,6 @@
 const invModel = require("../models/inventory-model");
 const utilities = require("../utilities/");
+const reviewModel = require("../models/review-model");
 
 const invCont = {};
 
@@ -27,19 +28,24 @@ invCont.buildByClassificationId = async function (req, res, next) {
  *  Build detail view by inventory_id
  * ************************** */
 invCont.buildByInvId = async function (req, res, next) {
-  // Corrected to match user's naming
   const inv_id = req.params.invId;
   const data = await invModel.getInventoryByInvId(inv_id);
+  if (!data) {
+    return next({ status: 404, message: "Sorry, we couldn't find that vehicle." });
+  }
   const grid = await utilities.buildDetailGrid(data);
   let nav = await utilities.getNav();
-  let className = "Vehicle Details"; // Default title
-  if (data) {
-    className = data.inv_year + " " + data.inv_make + " " + data.inv_model;
-  }
+  const className = data.inv_year + " " + data.inv_make + " " + data.inv_model;
+  // Fetch reviews and build HTML
+  const reviews = await reviewModel.getReviewsByInventoryId(inv_id);
+  const reviewsHTML = await utilities.buildReviews(reviews, inv_id, res.locals.accountData);
   res.render("./inventory/detail", {
     title: className,
     nav,
     grid,
+    reviews: reviewsHTML,
+    errors: null,
+    inv_id,
     messages: () => utilities.buildMessagesHTML(req),
   });
 };
@@ -67,7 +73,7 @@ invCont.buildAddClassificationView = async function (req, res, next) {
     title: "Add New Classification",
     nav,
     messages: () => utilities.buildMessagesHTML(req),
-        classification_name: "",
+    classification_name: "",
     errors: null,
   });
 };
