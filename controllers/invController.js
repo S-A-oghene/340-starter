@@ -44,7 +44,6 @@ invCont.buildByInvId = async function (req, res, next) {
     nav,
     grid,
     reviews: reviewsHTML,
-    errors: null,
     inv_id,
     messages: () => utilities.buildMessagesHTML(req),
   });
