@@ -226,3 +226,45 @@ footer {
     gap: 2rem;
   }
 }
+
+/* Account Management Page Styles */
+.management-view {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin: 1rem;
+}
+
+.management-view h2, .management-view h3 {
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.management-view p {
+  line-height: 1.6;
+}
+
+.management-view a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.management-view a:hover {
+  text-decoration: underline;
+}
+
+.user-review-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.user-review-list li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 3px;
+}
